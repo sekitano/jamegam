@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://fqpb521tatk5"]
+
+[ext_resource type="Texture2D" uid="uid://brknrshg00yst" path="res://assets/sleep_cat.png" id="1_af35l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rhlf"]
+atlas = ExtResource("1_af35l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ccxi"]
+atlas = ExtResource("1_af35l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rhlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ccxi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="sleeping_cat" type="AnimatedSprite2D" unique_id=1202114205]
+position = Vector2(-1, -21.375)
+scale = Vector2(1.335, 1.335)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.37494323

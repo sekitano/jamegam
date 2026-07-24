@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://71gay4bgigo3"]
+
+[ext_resource type="Texture2D" uid="uid://cfjvqd3xieakl" path="res://assets/wizard_dog.png" id="1_3jsmo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leome"]
+atlas = ExtResource("1_3jsmo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4iv4"]
+atlas = ExtResource("1_3jsmo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leome")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4iv4")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="wizard" type="AnimatedSprite2D" unique_id=200841332]
+position = Vector2(2, -21.36)
+scale = Vector2(1.335, 1.335)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+frame = 1
+frame_progress = 1.0

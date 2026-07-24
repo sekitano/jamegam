@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://lqfjm6v2v6qc"]
+
+[ext_resource type="Texture2D" uid="uid://c12nm8n74pptg" path="res://assets/blanket_fly.png" id="1_74q1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljt78"]
+atlas = ExtResource("1_74q1o")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kxxh"]
+atlas = ExtResource("1_74q1o")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljt78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kxxh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="magic_blanket" type="AnimatedSprite2D" unique_id=562690584]
+position = Vector2(5, -8)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+frame = 1
+frame_progress = 0.87119114
