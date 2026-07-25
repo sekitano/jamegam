@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cfkiwxbg74eyj"]
+
+[ext_resource type="Texture2D" uid="uid://b0p4es62d8c6y" path="res://assets/sign.png" id="1_shbub"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 11.045361
+
+[node name="Sign" type="Area2D" unique_id=210335106]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=881729625]
+position = Vector2(1, -9)
+texture = ExtResource("1_shbub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356874701]
+position = Vector2(1, -10)
+shape = SubResource("CircleShape2D_yf5fn")

@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var fade_out: AnimationPlayer = $ColorRect/AnimationPlayer
-@onready var timer: Timer = $Timer
 @onready var player: CharacterBody2D = $Player
 @onready var magic_blanket: Node2D = $magic_blanket
 @onready var blanket_follow: Label = $Player/Camera2D/blanket_follow
@@ -15,7 +13,7 @@ var sign_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	timer.start()
+	player.set_physics_process(false)
 	sign1.sign_finished.connect(_on_sign_finished)
 
 func _process(delta):
@@ -44,10 +42,6 @@ func _physics_process(delta):
 		
 
 
-func _on_timer_timeout() -> void:
-	fade_out.play("fade_out")
-
-
 func _on_sign_body_entered(body: Node2D) -> void:
 	entered = true
 	print("body entered")
@@ -60,14 +54,3 @@ func _on_sign_body_exited(body: Node2D) -> void:
 func _on_sign_finished():
 	sign1.hide()
 	sign_open = false
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("queue the cam!")
-	player.set_physics_process(false)
-	player.animated_sprite.play("idle")
-	call_deferred("next_level")
-
-	
-func next_level():
-	get_tree().change_scene_to_file('res://scenes/level2.tscn')
