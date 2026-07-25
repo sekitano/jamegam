@@ -27,5 +27,6 @@ animations = [{
 [node name="magic_blanket" type="AnimatedSprite2D" unique_id=562690584]
 position = Vector2(5, -8)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
+autoplay = "default"
 frame = 1
 frame_progress = 0.87119114

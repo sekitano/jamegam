@@ -2,11 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://cfjvqd3xieakl" path="res://assets/wizard_dog.png" id="1_3jsmo"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4iv4"]
+atlas = ExtResource("1_3jsmo")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_leome"]
 atlas = ExtResource("1_3jsmo")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4iv4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jsmo"]
+atlas = ExtResource("1_3jsmo")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmnu7"]
 atlas = ExtResource("1_3jsmo")
 region = Rect2(32, 0, 32, 32)
 
@@ -14,19 +22,31 @@ region = Rect2(32, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_leome")
+"texture": SubResource("AtlasTexture_j4iv4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j4iv4")
+"texture": SubResource("AtlasTexture_leome")
 }],
 "loop": 0,
-"name": &"default",
+"name": &"open_eyes",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jsmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmnu7")
+}],
+"loop": 1,
+"name": &"pant",
 "speed": 2.0
 }]
 
 [node name="wizard" type="AnimatedSprite2D" unique_id=200841332]
-position = Vector2(2, -21.36)
-scale = Vector2(1.335, 1.335)
+position = Vector2(-1, -21.7)
+scale = Vector2(-1.355, 1.355)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
+animation = &"pant"
 frame = 1
-frame_progress = 1.0
+frame_progress = 0.6768086
