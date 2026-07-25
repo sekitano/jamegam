@@ -128,9 +128,6 @@ _data = {
 &"fade_out": SubResource("Animation_4wyf3")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
-distance = -181.0
-
 [node name="World" type="Node2D" unique_id=222708667]
 script = ExtResource("1_4wyf3")
 
@@ -171,10 +168,5 @@ libraries/ = SubResource("AnimationLibrary_k0juu")
 [node name="Timer" type="Timer" parent="." unique_id=945585130]
 wait_time = 2.0
 one_shot = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1988012780]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=500772115]
-shape = SubResource("WorldBoundaryShape2D_g4v7s")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

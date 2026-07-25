@@ -26,18 +26,30 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kxxh"]
-size = Vector2(26.5, 8)
+size = Vector2(26, 8)
 
-[node name="magic_blanket" type="AnimatableBody2D" unique_id=517422349]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljt78"]
+size = Vector2(26, 8)
+
+[node name="magic_blanket" type="Node2D" unique_id=1239016283]
 script = ExtResource("1_ljt78")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1796796496]
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1674856685]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D" unique_id=428382847]
 scale = Vector2(1.335, 1.335)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"float"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1780040372]
-position = Vector2(2.25, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=202453006]
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_2kxxh")
 one_way_collision = true
 one_way_collision_margin = 0.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1849249129]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1068368633]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_ljt78")
+one_way_collision = true
