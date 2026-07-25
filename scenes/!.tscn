@@ -33,7 +33,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e2vqa")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"pop_down",
 "speed": 6.0
 }, {
@@ -56,4 +56,4 @@ animations = [{
 position = Vector2(1, -8)
 scale = Vector2(1.035714, 1.0357141)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"pop_up"
+animation = &"pop_down"

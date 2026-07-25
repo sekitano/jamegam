@@ -149,3 +149,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1972858294]
 libraries/ = SubResource("AnimationLibrary_k0juu")
+
+[node name="Timer" type="Timer" parent="." unique_id=945585130]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

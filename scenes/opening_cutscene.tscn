@@ -237,8 +237,8 @@ visible = false
 [node name="Textbox3" parent="Player/Camera2D" unique_id=643554399 instance=ExtResource("6_kelyf")]
 
 [node name="!" parent="." unique_id=346977599 instance=ExtResource("11_o80my")]
+visible = false
 position = Vector2(-4, -32)
-animation = &"pop_up"
 
 [node name="sleeping_cat" parent="." unique_id=1202114205 instance=ExtResource("3_h0r4w")]
 position = Vector2(-22.64, -21.359997)
