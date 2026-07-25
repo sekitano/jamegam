@@ -5,7 +5,7 @@ extends Node2D
 @onready var anim_body: AnimatableBody2D = $AnimatableBody2D
 
 
-const SPEED = 10.0
+const SPEED = 2.5
 
 var last_pos: Vector2 
 var follow_player := true
