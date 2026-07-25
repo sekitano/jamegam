@@ -13,7 +13,7 @@ enum State {
 @onready var start_symbol: Label = $TextboxContainer/MarginContainer/HBoxContainer/StartSymbol
 @onready var end_symbol: Label = $TextboxContainer/MarginContainer/HBoxContainer/EndSymbol
 @onready var label: Label = $TextboxContainer/MarginContainer/HBoxContainer/Label
-@onready var timer: Timer = $Timer
+
 
 var tween: Tween
 var state: State
@@ -24,7 +24,7 @@ const CHAR_READ_RATE = 0.065
 func _ready() -> void:
 	hide_textbox()
 	state = State.READY
-	timer.start()
+	
 	
 	#queue_text("This seems to be working. very nice!")
 	#queue_text("This one is gonna be a very very very very very very long text. haha")
@@ -85,9 +85,7 @@ func finish_text():
 	end_symbol.text = "V"
 	type_sound.stop()
 
-func _on_timer_timeout() -> void:
-	
-	queue_text("???: *huff huff*")
+
 	
 
 

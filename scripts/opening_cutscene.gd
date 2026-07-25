@@ -48,11 +48,12 @@ func _on_timer_timeout() -> void:
 	cat_covered.show()
 	wizard.show()
 	timer_2.start()
+	wizard.play("pant")
 	
 
 func _on_timer_2_timeout() -> void:
-	wizard.play("pant")
-	#timer_3.start()
+	textbox_2.show()
+	textbox_2.queue_text("???: *huff huff*")
 
 	
 func _on_dialogue_finished2():

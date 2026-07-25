@@ -74,4 +74,9 @@ offset_transform_enabled = true
 theme_override_font_sizes/font_size = 34
 text = "V"
 
+[node name="Timer" type="Timer" parent="." unique_id=357920374]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="dialogue_finished2" from="." to="." method="_on_dialogue_finished_2"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
