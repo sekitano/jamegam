@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cijc4vwompj6u" path="res://scenes/dialoguebox_op1.tscn" id="3_6gg23"]
 [ext_resource type="PackedScene" uid="uid://fqpb521tatk5" path="res://scenes/sleeping_cat.tscn" id="3_h0r4w"]
 [ext_resource type="PackedScene" uid="uid://cifcv1083gbli" path="res://scenes/dialoguebox_op2.tscn" id="5_02jfn"]
+[ext_resource type="PackedScene" uid="uid://bboku0cmfpbwk" path="res://scenes/dialoguebox_op3.tscn" id="6_kelyf"]
 [ext_resource type="PackedScene" uid="uid://71gay4bgigo3" path="res://scenes/wizard.tscn" id="6_rmyt7"]
-[ext_resource type="Texture2D" uid="uid://jql7dr4wny6o" path="res://assets/cat_covered.png" id="7_02jfn"]
 [ext_resource type="PackedScene" uid="uid://lqfjm6v2v6qc" path="res://scenes/magic_blanket.tscn" id="7_ci5ub"]
+[ext_resource type="PackedScene" uid="uid://d1lqmmq2nirgg" path="res://scenes/cat_covered.tscn" id="10_kelyf"]
+[ext_resource type="PackedScene" uid="uid://ddncmq1mjmncd" path="res://scenes/!.tscn" id="11_o80my"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("1_7qsw6")
@@ -134,9 +136,46 @@ _data = {
 
 [sub_resource type="Curve2D" id="Curve2D_rmyt7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 285, -23, 0, 0, 0, 0, 17, -23)
+"points": PackedVector2Array(0, 0, 0, 0, 301, -23, 0, 0, 0, 0, 9, -23)
 }
 point_count = 2
+
+[sub_resource type="Animation" id="Animation_o80my"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3qp00"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l4p34"]
+_data = {
+&"RESET": SubResource("Animation_o80my"),
+&"fade_in": SubResource("Animation_3qp00")
+}
 
 [sub_resource type="Animation" id="Animation_02jfn"]
 length = 0.001
@@ -195,19 +234,24 @@ zoom = Vector2(3.19, 3.19)
 [node name="Textbox2" parent="Player/Camera2D" unique_id=624233345 instance=ExtResource("5_02jfn")]
 visible = false
 
+[node name="Textbox3" parent="Player/Camera2D" unique_id=643554399 instance=ExtResource("6_kelyf")]
+
+[node name="!" parent="." unique_id=346977599 instance=ExtResource("11_o80my")]
+position = Vector2(-4, -32)
+animation = &"pop_up"
+
 [node name="sleeping_cat" parent="." unique_id=1202114205 instance=ExtResource("3_h0r4w")]
-position = Vector2(-22, -21.375)
+position = Vector2(-22.64, -21.359997)
 
 [node name="wizard" parent="." unique_id=200841332 instance=ExtResource("6_rmyt7")]
 visible = false
-position = Vector2(33.000004, -21.350002)
+position = Vector2(31.999989, -21.359993)
 frame_progress = 0.0
 
-[node name="CatCovered" type="Sprite2D" parent="." unique_id=1132873048]
+[node name="cat_covered" parent="." unique_id=1887012083 instance=ExtResource("10_kelyf")]
 visible = false
-position = Vector2(-22, -12)
-scale = Vector2(1.335, 1.335)
-texture = ExtResource("7_02jfn")
+position = Vector2(-19, -13)
+animation = &"wake_up"
 
 [node name="fade_out" type="ColorRect" parent="." unique_id=1991037944]
 visible = false
@@ -224,14 +268,25 @@ libraries/ = SubResource("AnimationLibrary_02jfn")
 curve = SubResource("Curve2D_rmyt7")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=705653168]
-position = Vector2(285, -23)
+position = Vector2(301, -23)
 rotation = 3.1415927
 loop = false
 
 [node name="magic_blanket" parent="Path2D/PathFollow2D" unique_id=562690584 instance=ExtResource("7_ci5ub")]
-position = Vector2(-2, -0.9999988)
+position = Vector2(-2.0000005, 1.0728836e-06)
 scale = Vector2(-1.335, -1.335)
-frame_progress = 0.50958955
+frame = 0
+frame_progress = 0.29866004
+
+[node name="blackscreen2" type="ColorRect" parent="." unique_id=956274797]
+offset_left = -110.0
+offset_top = -145.0
+offset_right = 258.0
+offset_bottom = 62.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="blackscreen2" unique_id=2106024054]
+libraries/ = SubResource("AnimationLibrary_l4p34")
 
 [node name="blackscreen" type="ColorRect" parent="." unique_id=691068347]
 visible = false
@@ -252,5 +307,23 @@ one_shot = true
 wait_time = 1.5
 one_shot = true
 
+[node name="Timer3" type="Timer" parent="." unique_id=1241448577]
+wait_time = 1.5
+one_shot = true
+
+[node name="Timer4" type="Timer" parent="." unique_id=758433053]
+one_shot = true
+
+[node name="Timer5" type="Timer" parent="." unique_id=196639539]
+one_shot = true
+
+[node name="Timer6" type="Timer" parent="." unique_id=1337133594]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]
+[connection signal="timeout" from="Timer6" to="." method="_on_timer_6_timeout"]
