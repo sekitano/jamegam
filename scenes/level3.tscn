@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://vgu6ib3ghlb4" path="res://assets/spikes_tileset.png" id="5_qewby"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="6_bradm"]
 [ext_resource type="Script" uid="uid://cixar0djnyq70" path="res://scripts/level3_kill_bricks.gd" id="7_b72m1"]
+[ext_resource type="PackedScene" uid="uid://4eeunf2cghed" path="res://scenes/broken_bottle.tscn" id="8_6qt4k"]
+[ext_resource type="PackedScene" uid="uid://2wcnytxj8cpb" path="res://scenes/cig.tscn" id="9_fh4ka"]
+[ext_resource type="PackedScene" uid="uid://dsqafxfxfdl1t" path="res://scenes/can.tscn" id="10_qewby"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("4_fh4ka")
@@ -343,6 +346,15 @@ position = Vector2(1656, 7)
 position = Vector2(1306, -803)
 rotation = 3.1415927
 shape = SubResource("WorldBoundaryShape2D_b72m1")
+
+[node name="broken_bottle" parent="." unique_id=1007834893 instance=ExtResource("8_6qt4k")]
+position = Vector2(2869, -98.99999)
+
+[node name="cig" parent="." unique_id=159596559 instance=ExtResource("9_fh4ka")]
+position = Vector2(3152, -37.99999)
+
+[node name="can" parent="." unique_id=1401199606 instance=ExtResource("10_qewby")]
+position = Vector2(3430.9998, -163)
 
 [connection signal="body_entered" from="kill_bricks" to="kill_bricks" method="_on_body_entered"]
 [connection signal="body_entered" from="transition_zoom" to="." method="_on_area_2d_body_entered"]

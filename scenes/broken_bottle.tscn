@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://4eeunf2cghed"]
+
+[ext_resource type="Texture2D" uid="uid://daghrbsn6fubu" path="res://assets/broken_bottle.png" id="1_82fk6"]
+[ext_resource type="Script" uid="uid://dktvcadme3pw6" path="res://scripts/broken_bottle.gd" id="1_p7jtx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 5.0
+height = 26.0
+
+[node name="broken_bottle" type="Area2D" unique_id=1007834893]
+position = Vector2(0, -3)
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_p7jtx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1060356738]
+position = Vector2(3, -8)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_82fk6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1722150478]
+position = Vector2(2.3076923, -4.615385)
+rotation = 1.5707964
+scale = Vector2(1.3, 1.3)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

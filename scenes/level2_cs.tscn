@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="5_twclw"]
 [ext_resource type="Script" uid="uid://dclyjycivylgw" path="res://scripts/world_boundary.gd" id="6_f7id0"]
 [ext_resource type="FontFile" uid="uid://dqyhqvj0bpo4s" path="res://assets/PixeloidSans.ttf" id="7_nioyf"]
+[ext_resource type="PackedScene" uid="uid://dsqafxfxfdl1t" path="res://scenes/can.tscn" id="8_ebdcd"]
+[ext_resource type="PackedScene" uid="uid://tqb4ik5ftq24" path="res://scenes/bottle.tscn" id="9_twclw"]
+[ext_resource type="PackedScene" uid="uid://2wcnytxj8cpb" path="res://scenes/cig.tscn" id="10_f7id0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("3_1xj5x")
@@ -178,5 +181,14 @@ offset_bottom = 104.0
 theme_override_fonts/font = ExtResource("7_nioyf")
 theme_override_font_sizes/font_size = 9
 text = "magic blanket follow: "
+
+[node name="can" parent="." unique_id=1401199606 instance=ExtResource("8_ebdcd")]
+position = Vector2(1695.0001, -291)
+
+[node name="bottle" parent="." unique_id=674027022 instance=ExtResource("9_twclw")]
+position = Vector2(1694.0001, -181.00002)
+
+[node name="cig" parent="." unique_id=159596559 instance=ExtResource("10_f7id0")]
+position = Vector2(1538.0001, -54)
 
 [connection signal="body_entered" from="kill_boundary" to="kill_boundary" method="_on_body_entered"]

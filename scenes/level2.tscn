@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://vgu6ib3ghlb4" path="res://assets/spikes_tileset.png" id="5_56gwk"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="6_ve5ok"]
 [ext_resource type="FontFile" uid="uid://dqyhqvj0bpo4s" path="res://assets/PixeloidSans.ttf" id="7_cleqw"]
+[ext_resource type="PackedScene" uid="uid://2wcnytxj8cpb" path="res://scenes/cig.tscn" id="8_76toy"]
 [ext_resource type="Script" uid="uid://rofflj1pt43c" path="res://scripts/level2_kill_bricks.gd" id="8_hrcei"]
 [ext_resource type="Script" uid="uid://dclyjycivylgw" path="res://scripts/world_boundary.gd" id="8_wvb8j"]
+[ext_resource type="PackedScene" uid="uid://dsqafxfxfdl1t" path="res://scenes/can.tscn" id="10_8g4ke"]
+[ext_resource type="PackedScene" uid="uid://tqb4ik5ftq24" path="res://scenes/bottle.tscn" id="11_56gwk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("4_8g4ke")
@@ -246,6 +249,15 @@ zoom = Vector2(1.15, 1.15)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_lvl3" unique_id=1165130576]
 position = Vector2(2604, -546.125)
 shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="can" parent="." unique_id=1401199606 instance=ExtResource("10_8g4ke")]
+position = Vector2(1695, -292)
+
+[node name="bottle" parent="." unique_id=674027022 instance=ExtResource("11_56gwk")]
+position = Vector2(1694, -182.00002)
+
+[node name="cig" parent="." unique_id=159596559 instance=ExtResource("8_76toy")]
+position = Vector2(1538, -55)
 
 [connection signal="body_entered" from="kill_boundary" to="kill_boundary" method="_on_body_entered"]
 [connection signal="body_entered" from="kill_bricks" to="kill_bricks" method="_on_body_entered"]

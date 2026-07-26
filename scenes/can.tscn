@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dsqafxfxfdl1t"]
+
+[ext_resource type="Texture2D" uid="uid://dcwmvhsyopbqg" path="res://assets/garbage_can.png" id="1_medpb"]
+[ext_resource type="Script" uid="uid://ccnyc4pjw8sp4" path="res://scripts/can.gd" id="1_py3wg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 6.0
+
+[node name="can" type="Area2D" unique_id=1401199606]
+position = Vector2(0, -3)
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_py3wg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=407563430]
+position = Vector2(0, -8)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_medpb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478995898]
+position = Vector2(0, -6.1538467)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
