@@ -3,6 +3,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $Path2D/PathFollow2D/Player
 
 @onready var magic_blanket: Node2D = $Path2D/PathFollow2D/magic_blanket
+@onready var wizard: AnimatedSprite2D = $wizard
 
 #@onready var blanket_follow: Label = $blanket_follow
 @onready var path_follower: PathFollow2D = $Path2D/PathFollow2D
@@ -40,6 +41,7 @@ var is_path_following2 = false
 func _ready() -> void:
 	Music.play("ending_cs")
 	
+	wizard.play("open_eyes")
 	timer.start()
 	blanket_follow.hide()
 	player.set_physics_process(false)

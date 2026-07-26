@@ -7,8 +7,8 @@ enum State {
 	READING,
 	FINISHED
 }
+@onready var type_sound: AudioStreamPlayer = $SfxRetroMultiplev1
 
-@onready var type_sound: AudioStreamPlayer = $TypeSound
 @onready var textbox_container: MarginContainer = $TextboxContainer
 @onready var start_symbol: Label = $TextboxContainer/MarginContainer/HBoxContainer/StartSymbol
 @onready var end_symbol: Label = $TextboxContainer/MarginContainer/HBoxContainer/EndSymbol
@@ -18,7 +18,7 @@ enum State {
 var tween: Tween
 var state: State
 var text_queue = []
-const CHAR_READ_RATE = 0.065
+const CHAR_READ_RATE = 0.05
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
