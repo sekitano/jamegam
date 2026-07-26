@@ -5,7 +5,6 @@ extends Node2D
 #@onready var blanket_follow: Label = $blanket_follow
 @onready var path_follower: PathFollow2D = $Path2D/PathFollow2D
 #@onready var camera: Camera2D = $Path2D/PathFollow2D/Camera2D3
-@onready var camera: Camera2D = $Path2D/PathFollow2D/Camera2D2
 @onready var blanket_body = $magic_blanket/StaticBody2D
 @onready var player_cam: Camera2D = $Player/Camera2D
 @onready var blanket_follow: Label = $Player/Camera2D/blanket_follow
@@ -30,6 +29,7 @@ var is_path_following = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timer.start()
 	#is_path_following = true
 	blanket_follow.hide()
 	player.set_physics_process(false)
@@ -41,12 +41,11 @@ func _process(delta):
 func _physics_process(delta):
 	if is_path_following:
 		path_follower.progress_ratio += 0.02
-		var tween = get_tree().create_tween()
-		tween.tween_property(camera, "zoom", default_zoom, zoom_in_speed_sec)
+		#var tween = get_tree().create_tween()
+		#tween.tween_property(camera, "zoom", default_zoom, zoom_in_speed_sec)
 		if path_follower.progress_ratio >= 1:
 			#get_tree().change_scene_to_file("res://scenes/level4.tscn")
-			player_cam.make_current()
-			blanket_follow.show()
+			#player_cam.make_current()
 			is_path_following = false
 			
 	var direction = player.velocity.normalized()
@@ -62,3 +61,7 @@ func _physics_process(delta):
 		if direction != Vector2.ZERO:
 			var target = player.global_position - direction * DISTANCE
 			magic_blanket.global_position = magic_blanket.global_position.lerp(target, delta * FOLLOW_SPEED)
+
+
+func _on_timer_timeout() -> void:
+	animation_player.play("fade_out")
