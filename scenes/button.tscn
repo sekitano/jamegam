@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://e32w6fc070j7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(12, 7)
+
+[node name="button" type="Area2D" unique_id=2066887609]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366434789]
+position = Vector2(0, 4.5)
+scale = Vector2(1.165, 1.165)
+shape = SubResource("RectangleShape2D_yf5fn")

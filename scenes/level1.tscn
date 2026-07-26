@@ -191,7 +191,6 @@ theme_override_font_sizes/font_size = 9
 text = "magic blanket follow: "
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1569228542]
-visible = false
 offset_left = -110.0
 offset_top = -147.0
 offset_right = 255.0

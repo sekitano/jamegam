@@ -330,8 +330,9 @@ zoom = Vector2(1.15, 1.15)
 [node name="start_level4" type="Area2D" parent="." unique_id=715395332]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="start_level4" unique_id=1451772268]
-position = Vector2(4001, -167.5)
+position = Vector2(4019, -167)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [connection signal="body_entered" from="kill_bricks" to="kill_bricks" method="_on_body_entered"]
 [connection signal="body_entered" from="transition_zoom" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="start_level4" to="." method="_on_start_level_4_body_entered"]

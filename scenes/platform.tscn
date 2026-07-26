@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cf3jky6xi6f1b"]
+
+[ext_resource type="Texture2D" uid="uid://ddcwl34c1stlx" path="res://assets/BMTileset.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(31, 9)
+
+[node name="platform" type="AnimatableBody2D" unique_id=912161394]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1722468640]
+texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(287, 19, 34, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1321218784]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_g4v7s")

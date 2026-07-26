@@ -31,6 +31,9 @@ size = Vector2(26, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljt78"]
 size = Vector2(26, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(26, 8)
+
 [node name="magic_blanket" type="Node2D" unique_id=1239016283]
 script = ExtResource("1_ljt78")
 
@@ -48,8 +51,15 @@ one_way_collision = true
 one_way_collision_margin = 0.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1849249129]
+light_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1068368633]
 position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_ljt78")
 one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=825034714]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=512493390]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_g4v7s")
