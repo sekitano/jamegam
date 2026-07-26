@@ -4,7 +4,8 @@ extends Node2D
 @onready var magic_blanket: Node2D = $magic_blanket
 @onready var blanket_follow: Label = $blanket_follow
 @onready var player_cam: Camera2D = $Player/Camera2D
-@onready var camera: Camera2D = $Camera2D2
+@onready var camera: Camera2D = $Path2D/PathFollow2D/Camera2D2
+@onready var path_follower: PathFollow2D = $Path2D/PathFollow2D
 
 
 #@onready var blanket_follow: Label = $Player/Camera2D/blanket_follow
@@ -30,7 +31,13 @@ func _process(delta):
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-		
+	if is_path_following:
+		path_follower.progress_ratio += 0.02
+		var tween = get_tree().create_tween()
+		tween.tween_property(camera, "zoom", default_zoom, zoom_in_speed_sec)
+		if path_follower.progress_ratio >= 1:
+			player_cam.make_current()
+			is_path_following = false
 	var direction = player.velocity.normalized()
 	
 	#print(magic_blanket.follow_player)
@@ -47,5 +54,7 @@ func _physics_process(delta):
 		
 
 func _on_kill_bricks_body_entered(body: Node2D) -> void:
-
 	get_tree().change_scene_to_file("res://scenes/level_3.tscn")
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	is_path_following = true
