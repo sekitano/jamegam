@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bkgcvqg7olhrh" path="res://assets/bottle.png" id="1_724mw"]
 [ext_resource type="Script" uid="uid://cw2infbft6244" path="res://scripts/bottle.gd" id="1_qr18b"]
+[ext_resource type="AudioStream" uid="uid://dda32amnrwrf8" path="res://assets/pickup trash.wav" id="2_emwc0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 5.0
@@ -11,6 +12,10 @@ height = 24.0
 position = Vector2(0, -5.805)
 scale = Vector2(1.3, 1.3)
 script = ExtResource("1_qr18b")
+
+[node name="PickupTrash" type="AudioStreamPlayer" parent="." unique_id=549633842]
+stream = ExtResource("2_emwc0")
+bus = &"pick up"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=204936040]
 position = Vector2(1, -5.805)

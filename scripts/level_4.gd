@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var death_: AudioStreamPlayer = $Death_
+
+
 @onready var player: CharacterBody2D = $Player
 @onready var magic_blanket: Node2D = $magic_blanket
 @onready var blanket_follow: Label = $blanket_follow
@@ -63,6 +66,7 @@ func _physics_process(delta):
 
 
 func _on_killbrick_spikes_body_entered(body: Node2D) -> void:
+	death_.play()
 	call_deferred("respawn")
 func respawn():
 	get_tree().change_scene_to_file("res://scenes/level4.tscn")

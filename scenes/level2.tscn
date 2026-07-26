@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d1cm8ukm1wyck"]
 
 [ext_resource type="Script" uid="uid://0bcfokbxjdyr" path="res://scripts/level_2.gd" id="1_xa7n4"]
+[ext_resource type="AudioStream" uid="uid://yhjd3l6s6fk4" path="res://assets/DEATH..wav" id="2_8g4ke"]
 [ext_resource type="PackedScene" uid="uid://bf58vxrb5esl6" path="res://scenes/magic_blanket.tscn" id="3_76toy"]
 [ext_resource type="Texture2D" uid="uid://ddcwl34c1stlx" path="res://assets/BMTileset.png" id="4_8g4ke"]
 [ext_resource type="Texture2D" uid="uid://vgu6ib3ghlb4" path="res://assets/spikes_tileset.png" id="5_56gwk"]
@@ -281,7 +282,13 @@ position = Vector2(1694, -182.00002)
 [node name="cig" parent="." unique_id=159596559 instance=ExtResource("8_76toy")]
 position = Vector2(1538, -55)
 
+[node name="Death_" type="AudioStreamPlayer" parent="." unique_id=1360692764]
+stream = ExtResource("2_8g4ke")
+bus = &"death"
+
 [connection signal="body_entered" from="kill_boundary" to="kill_boundary" method="_on_body_entered"]
 [connection signal="body_entered" from="kill_bricks" to="kill_bricks" method="_on_body_entered"]
 [connection signal="body_entered" from="transition" to="." method="_on_transition_body_entered"]
 [connection signal="body_entered" from="transition_to_lvl3" to="." method="_on_transition_to_lvl_3_body_entered"]
+[connection signal="finished" from="Death_" to="kill_boundary" method="_on_death__finished"]
+[connection signal="finished" from="Death_" to="kill_bricks" method="_on_death__finished"]

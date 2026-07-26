@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://m8o0qdj37xbi" path="res://assets/blackyjumpfall.png" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://4ahpt8nylnpm" path="res://assets/blackyidle.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://d31nyjaghdj0r" path="res://assets/blackyrun.png" id="3_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://cxrpi5vxots8c" path="res://assets/jump.wav" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("1_qhqgy")
@@ -125,3 +126,8 @@ frame_progress = 0.9615713
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1908440740]
 position = Vector2(0, 0.5)
 shape = SubResource("CapsuleShape2D_wms6t")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1232116524]
+stream = ExtResource("5_qlg0r")
+volume_db = -16.571
+bus = &"jump"

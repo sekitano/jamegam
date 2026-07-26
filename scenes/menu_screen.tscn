@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ddvlrb7bsdbqu" path="res://assets/RestartButton.png" id="5_73fcp"]
 [ext_resource type="Texture2D" uid="uid://vgu6ib3ghlb4" path="res://assets/spikes_tileset.png" id="5_lkml2"]
 [ext_resource type="Texture2D" uid="uid://cnuryrrtwdcmy" path="res://assets/exitbutton.png" id="6_ar34o"]
+[ext_resource type="Texture2D" uid="uid://bhif6uhitna3e" path="res://assets/trashy_catventure_text.png" id="8_gld7y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yf5fn"]
 texture = ExtResource("5_73fcp")
@@ -276,6 +277,11 @@ libraries/ = SubResource("AnimationLibrary_0m60l")
 [node name="Timer" type="Timer" parent="." unique_id=2085889344]
 wait_time = 1.5
 one_shot = true
+
+[node name="TrashyCatventureText" type="Sprite2D" parent="." unique_id=1947939409]
+position = Vector2(13.000002, -168.99998)
+scale = Vector2(0.9027778, 0.9027778)
+texture = ExtResource("8_gld7y")
 
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Exit" to="." method="_on_exit_pressed"]

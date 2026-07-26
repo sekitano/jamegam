@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var pickup_trash: AudioStreamPlayer = $PickupTrash
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,10 +15,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	print("+1 trash")
+	pickup_trash.play()
+	sprite_2d.hide()
 	
 	Global.broken_bottle_count += 1
 	Global.trash_count += 1
 	
 	print("Total trash:", Global.trash_count)
+	await pickup_trash.finished
 	
 	queue_free()

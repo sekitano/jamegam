@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://dqyhqvj0bpo4s" path="res://assets/PixeloidSans.ttf" id="7_i8kv5"]
 [ext_resource type="Script" uid="uid://dclyjycivylgw" path="res://scripts/world_boundary.gd" id="8_dxn3v"]
 [ext_resource type="PackedScene" uid="uid://cfkiwxbg74eyj" path="res://scenes/sign.tscn" id="9_14jow"]
+[ext_resource type="AudioStream" uid="uid://yhjd3l6s6fk4" path="res://assets/DEATH..wav" id="10_d3jkd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("4_2ku1j")
@@ -209,6 +210,10 @@ position = Vector2(742, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=250275448]
 position = Vector2(1140.125, -321.5)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Death_" type="AudioStreamPlayer" parent="." unique_id=372525468]
+stream = ExtResource("10_d3jkd")
+bus = &"death"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="kill_boundary" to="kill_boundary" method="_on_body_entered"]

@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://4eeunf2cghed" path="res://scenes/broken_bottle.tscn" id="13_8f67t"]
 [ext_resource type="PackedScene" uid="uid://2wcnytxj8cpb" path="res://scenes/cig.tscn" id="14_2vnbt"]
 [ext_resource type="PackedScene" uid="uid://tqb4ik5ftq24" path="res://scenes/bottle.tscn" id="15_8f67t"]
+[ext_resource type="AudioStream" uid="uid://yhjd3l6s6fk4" path="res://assets/DEATH..wav" id="16_2vnbt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("4_q6sfj")
@@ -533,6 +534,10 @@ scale = Vector2(1.6, 1.6)
 theme_override_fonts/font = ExtResource("2_vxn4p")
 theme_override_font_sizes/font_size = 9
 text = "magic blanket follow: "
+
+[node name="Death_" type="AudioStreamPlayer" parent="." unique_id=1531966358]
+stream = ExtResource("16_2vnbt")
+bus = &"death"
 
 [connection signal="body_entered" from="killbrick_spikes" to="." method="_on_killbrick_spikes_body_entered"]
 [connection signal="area_entered" from="button_elevator" to="." method="_on_button_elevator_area_entered"]
