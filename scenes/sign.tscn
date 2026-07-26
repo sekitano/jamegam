@@ -6,13 +6,17 @@
 radius = 11.045361
 
 [node name="Sign" type="Area2D" unique_id=210335106]
+position = Vector2(-1, -2)
+scale = Vector2(1.225, 1.225)
 collision_layer = 2
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=881729625]
 position = Vector2(1, -9)
+scale = Vector2(1.225, 1.225)
 texture = ExtResource("1_shbub")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356874701]
 position = Vector2(1, -10)
+scale = Vector2(1.225, 1.225)
 shape = SubResource("CircleShape2D_yf5fn")

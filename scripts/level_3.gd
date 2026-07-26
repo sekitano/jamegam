@@ -8,6 +8,7 @@ extends Node2D
 @onready var path_follower: PathFollow2D = $Path2D/PathFollow2D
 @onready var blanket_follow_player: Label = $Player/Camera2D/blanket_follow
 
+@onready var blanket_follow2: Label = $Player/Camera2D/blanket_follow
 
 #@onready var blanket_follow: Label = $Player/Camera2D/blanket_follow
 
@@ -42,6 +43,7 @@ func _physics_process(delta):
 			player_cam.make_current()
 			blanket_follow_player.show()
 			is_path_following = false
+			blanket_follow2.show()
 	var direction = player.velocity.normalized()
 	
 	#print(magic_blanket.follow_player)
@@ -50,6 +52,11 @@ func _physics_process(delta):
 		blanket_follow.text = "magic blanket follow: on"
 	else:
 		blanket_follow.text = "magic blanket follow: off"
+	
+	if magic_blanket.follow_player:
+		blanket_follow2.text = "magic blanket follow: on"
+	else:
+		blanket_follow2.text = "magic blanket follow: off"
 	
 	if magic_blanket.follow_player:
 		if direction != Vector2.ZERO:

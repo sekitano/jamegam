@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://vgu6ib3ghlb4" path="res://assets/spikes_tileset.png" id="5_aw4rc"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="6_ldgu2"]
 [ext_resource type="FontFile" uid="uid://dqyhqvj0bpo4s" path="res://assets/PixeloidSans.ttf" id="7_1u40n"]
-[ext_resource type="Script" uid="uid://dclyjycivylgw" path="res://scripts/world_boundary.gd" id="8_cbjh0"]
 [ext_resource type="PackedScene" uid="uid://cfkiwxbg74eyj" path="res://scenes/sign.tscn" id="9_p3ahl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
@@ -172,9 +171,6 @@ _data = {
 &"fade_out": SubResource("Animation_4wyf3")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yf5fn"]
-distance = 17.0
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
 distance = -108.0
 
@@ -227,13 +223,6 @@ color = Color(0, 0, 0, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1972858294]
 libraries/ = SubResource("AnimationLibrary_k0juu")
 
-[node name="kill_boundary" type="Area2D" parent="." unique_id=1529053462]
-script = ExtResource("8_cbjh0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_boundary" unique_id=1812527085]
-position = Vector2(794, 420)
-shape = SubResource("WorldBoundaryShape2D_yf5fn")
-
 [node name="world_boundary" type="StaticBody2D" parent="." unique_id=844717195]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="world_boundary" unique_id=604818881]
@@ -256,13 +245,12 @@ position = Vector2(1140.125, -322.5)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Timer2" type="Timer" parent="." unique_id=1143689928]
-wait_time = 3.0
+wait_time = 1.5
 one_shot = true
 
 [node name="Timer" type="Timer" parent="." unique_id=686918573]
 one_shot = true
 
-[connection signal="body_entered" from="kill_boundary" to="kill_boundary" method="_on_body_entered"]
 [connection signal="body_entered" from="sign" to="." method="_on_sign_body_entered"]
 [connection signal="body_exited" from="sign" to="." method="_on_sign_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

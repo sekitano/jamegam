@@ -24,7 +24,7 @@ func _process(delta):
 		sign_open = true
 		sign1.show()
 		sign1.queue_text("Pretty big jump huh... That's where your magic blanket can help!")
-		sign1.queue_text("Press 'E' to toggle the blanket movement. While the magic blanket follow is off, you can move it freely by pressing 'left click'.")
+		sign1.queue_text("Press 'E' to toggle the blanket movement. While the magic blanket follow is off, you can move it freely by holding 'left click'.")
 		sign1.queue_text("Also, while magic blanket toggle is off, you can jump on it if the blanket sits still. Pretty cool right?")
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
