@@ -127,11 +127,14 @@ sources/1 = SubResource("TileSetAtlasSource_w7kh3")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
 distance = 1051.0
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hrcei"]
+distance = -1.0000305
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(110, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(21, 1064)
+size = Vector2(21, 221)
 
 [sub_resource type="Curve2D" id="Curve2D_hrcei"]
 _data = {
@@ -140,7 +143,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
-size = Vector2(18, 1041.5)
+size = Vector2(18, 227.75)
 
 [node name="Level2" type="Node2D" unique_id=222708667]
 script = ExtResource("1_xa7n4")
@@ -187,11 +190,16 @@ script = ExtResource("8_wvb8j")
 position = Vector2(794, 420)
 shape = SubResource("WorldBoundaryShape2D_yf5fn")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=844717195]
+[node name="world_boundary" type="StaticBody2D" parent="." unique_id=844717195]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=604818881]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world_boundary" unique_id=604818881]
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="upper_boundary" type="CollisionShape2D" parent="world_boundary" unique_id=1276642604]
+position = Vector2(626, -668)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_hrcei")
 
 [node name="kill_bricks" type="Area2D" parent="." unique_id=2136114569]
 position = Vector2(1231, -60)
@@ -212,7 +220,7 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="transition" type="Area2D" parent="." unique_id=1052173298]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition" unique_id=151572011]
-position = Vector2(2056.5, -966)
+position = Vector2(2056.5, -544.5)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=887989263]
@@ -236,7 +244,7 @@ zoom = Vector2(1.15, 1.15)
 [node name="transition_to_lvl3" type="Area2D" parent="." unique_id=1906806913]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_lvl3" unique_id=1165130576]
-position = Vector2(2604, -953)
+position = Vector2(2604, -546.125)
 shape = SubResource("RectangleShape2D_57qmd")
 
 [connection signal="body_entered" from="kill_boundary" to="kill_boundary" method="_on_body_entered"]

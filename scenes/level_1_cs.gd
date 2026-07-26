@@ -1,10 +1,12 @@
 extends Node2D
 
+@onready var fade_out: AnimationPlayer = $ColorRect/AnimationPlayer
 @onready var timer: Timer = $Timer
 @onready var player: CharacterBody2D = $Player
 @onready var magic_blanket: Node2D = $magic_blanket
 @onready var blanket_follow: Label = $Player/Camera2D/blanket_follow
 @onready var sign1: CanvasLayer = $sign_text
+@onready var timer_2: Timer = $Timer2
 
 const FOLLOW_SPEED = 4.0
 const DISTANCE = 15.0
@@ -16,6 +18,7 @@ var sign_open = false
 func _ready() -> void:
 	timer.start()
 	sign1.sign_finished.connect(_on_sign_finished)
+	player.animated_sprite.play("idle")
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact") and entered and not sign_open:
@@ -42,6 +45,11 @@ func _physics_process(delta):
 			magic_blanket.global_position = magic_blanket.global_position.lerp(target, delta * FOLLOW_SPEED)
 		
 
+
+func _on_timer_timeout() -> void:
+	fade_out.play("fade_out")
+	timer_2.start()
+
 func _on_sign_body_entered(body: Node2D) -> void:
 	entered = true
 	print("body entered")
@@ -65,3 +73,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 func next_level():
 	get_tree().change_scene_to_file('res://scenes/level2_cs.tscn')
+
+
+func _on_timer_2_timeout() -> void:
+	get_tree().change_scene_to_file('res://scenes/level1.tscn')
