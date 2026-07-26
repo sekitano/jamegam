@@ -367,19 +367,6 @@ size = Vector2(16.5, 195)
 [node name="level4" type="Node2D" unique_id=222708667]
 script = ExtResource("1_im88e")
 
-[node name="blanket_follow" type="Label" parent="." unique_id=2135706261]
-visible = false
-z_index = 2
-offset_left = 3437.0
-offset_top = 44.0
-offset_right = 3548.0
-offset_bottom = 57.0
-scale = Vector2(1.6, 1.6)
-theme_override_fonts/font = ExtResource("2_vxn4p")
-theme_override_font_sizes/font_size = 9
-text = "magic blanket follow: "
-metadata/_edit_use_anchors_ = true
-
 [node name="magic_blanket" parent="." unique_id=1058738046 instance=ExtResource("3_5cjb5")]
 position = Vector2(3973, -109)
 
@@ -535,6 +522,17 @@ position = Vector2(4851, -103)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="transition_to_end" unique_id=1371159589]
 position = Vector2(4974, -245)
 shape = SubResource("RectangleShape2D_vfslc")
+
+[node name="blanket_follow" type="Label" parent="." unique_id=627005764]
+z_index = 2
+offset_left = 4792.0
+offset_top = 19.0
+offset_right = 4903.0
+offset_bottom = 31.999998
+scale = Vector2(1.6, 1.6)
+theme_override_fonts/font = ExtResource("2_vxn4p")
+theme_override_font_sizes/font_size = 9
+text = "magic blanket follow: "
 
 [connection signal="body_entered" from="killbrick_spikes" to="." method="_on_killbrick_spikes_body_entered"]
 [connection signal="area_entered" from="button_elevator" to="." method="_on_button_elevator_area_entered"]

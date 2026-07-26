@@ -219,18 +219,6 @@ position = Vector2(4484.0005, -241)
 scale = Vector2(0.99999994, 0.99999994)
 zoom = Vector2(1.15, 1.15)
 
-[node name="blanket_follow" type="Label" parent="." unique_id=2135706261]
-z_index = 2
-offset_left = 1864.0
-offset_top = 20.0
-offset_right = 1975.0
-offset_bottom = 33.0
-scale = Vector2(1.6, 1.6)
-theme_override_fonts/font = ExtResource("2_rupth")
-theme_override_font_sizes/font_size = 9
-text = "magic blanket follow: "
-metadata/_edit_use_anchors_ = true
-
 [node name="magic_blanket" parent="." unique_id=1058738046 instance=ExtResource("3_6qt4k")]
 position = Vector2(2553, -458)
 
@@ -377,6 +365,17 @@ position = Vector2(3152, -37.99999)
 
 [node name="can" parent="." unique_id=1401199606 instance=ExtResource("10_qewby")]
 position = Vector2(3430.9998, -163)
+
+[node name="blanket_follow" type="Label" parent="." unique_id=1728931870]
+z_index = 2
+offset_left = 3396.0
+offset_top = 19.0
+offset_right = 3507.0
+offset_bottom = 32.0
+scale = Vector2(1.6, 1.6)
+theme_override_fonts/font = ExtResource("2_rupth")
+theme_override_font_sizes/font_size = 9
+text = "magic blanket follow: "
 
 [connection signal="body_entered" from="kill_bricks" to="kill_bricks" method="_on_body_entered"]
 [connection signal="body_entered" from="transition_zoom" to="." method="_on_area_2d_body_entered"]
