@@ -70,4 +70,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 	
 func next_level():
-	get_tree().change_scene_to_file('res://scenes/level2.tscn')
+	get_tree().change_scene_to_file('res://scenes/level2_cs.tscn')
