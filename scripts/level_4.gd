@@ -33,6 +33,7 @@ var is_path_following = false
 func _ready() -> void:
 	camera.make_current()
 	
+	
 func _process(delta):
 	pass
 		

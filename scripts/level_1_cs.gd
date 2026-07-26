@@ -16,6 +16,7 @@ var sign_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player.set_physics_process(false)
 	timer.start()
 	sign1.sign_finished.connect(_on_sign_finished)
 	player.animated_sprite.play("idle")
