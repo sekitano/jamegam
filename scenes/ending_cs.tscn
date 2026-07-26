@@ -188,6 +188,43 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Animation" id="Animation_p3vct"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sx4nr"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_epplc"]
+_data = {
+&"RESET": SubResource("Animation_p3vct"),
+&"fade_in": SubResource("Animation_sx4nr")
+}
+
 [node name="ending_cs" type="Node2D" unique_id=222708667]
 script = ExtResource("1_5suqs")
 
@@ -286,6 +323,17 @@ frame_progress = 1.0
 
 [node name="Timer2" type="Timer" parent="." unique_id=536229514]
 one_shot = true
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1008418818]
+z_index = 4
+offset_left = 5014.0
+offset_top = -415.0
+offset_right = 5750.0
+offset_bottom = 83.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect2" unique_id=1202207934]
+libraries/ = SubResource("AnimationLibrary_epplc")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

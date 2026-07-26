@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var magic_blanket: Node2D = $Path2D/PathFollow2D/magic_blanket
 @onready var wizard: AnimatedSprite2D = $wizard
+@onready var fade_to_creds: AnimationPlayer = $ColorRect2/AnimationPlayer
 
 #@onready var blanket_follow: Label = $blanket_follow
 @onready var path_follower: PathFollow2D = $Path2D/PathFollow2D
@@ -39,6 +40,8 @@ var is_path_following2 = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	textbox.dialogue_finished3.connect(_on_dialogue_finished3)
+	
 	Music.play("ending_cs")
 	
 	wizard.play("open_eyes")
@@ -106,3 +109,6 @@ func _on_timer_2_timeout() -> void:
 	textbox.queue_text("Wizard: I see you've done a good job at cleaning up my sacred land.")
 	textbox.queue_text("Wizard: Thank you youngling. It mustn't have been easy clearing all of those obstacles.")
 	textbox.queue_text("Wizard: I've seen what you are capable of. The magic blanket is yours.")
+	
+func _on_dialogue_finished3():
+		print("dialogue finish")

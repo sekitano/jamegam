@@ -87,5 +87,5 @@ func finish_text():
 
 
 
-func _on_dialogue_finished_3() -> void:
+func _on_dialogue_finished() -> void:
 	pass # Replace with function body.
