@@ -32,6 +32,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Label2" type="Label" parent="." unique_id=107528015]
+visible = false
 offset_left = 408.0
 offset_top = 416.0
 offset_right = 595.0
@@ -39,4 +40,9 @@ offset_bottom = 439.0
 theme_override_fonts/font = ExtResource("2_2ckv8")
 text = "thank you for playing! :3"
 
+[node name="Timer2" type="Timer" parent="." unique_id=86115531]
+wait_time = 60.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
