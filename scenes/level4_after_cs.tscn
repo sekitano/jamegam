@@ -121,7 +121,7 @@ sources/1 = SubResource("TileSetAtlasSource_w7kh3")
 
 [sub_resource type="Curve2D" id="Curve2D_5t2vx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 4484, -241, 0, 0, 0, 0, 4961, -155)
+"points": PackedVector2Array(0, 0, 0, 0, 4484, -241, 0, 0, 0, 0, 4960, -190)
 }
 point_count = 2
 
@@ -209,7 +209,7 @@ curve = SubResource("Curve2D_5t2vx")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=563569691]
 position = Vector2(4484, -241)
-rotation = 0.17837721
+rotation = 0.10673567
 loop = false
 
 [node name="Camera2D2" type="Camera2D" parent="Path2D/PathFollow2D" unique_id=790043421]
