@@ -14,6 +14,8 @@ var sign_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music.play("gameplay")
+	
 	timer.start()
 	sign1.sign_finished.connect(_on_sign_finished)
 

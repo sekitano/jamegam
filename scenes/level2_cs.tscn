@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://ddcwl34c1stlx" path="res://assets/BMTileset.png" id="3_1xj5x"]
 [ext_resource type="Texture2D" uid="uid://vgu6ib3ghlb4" path="res://assets/spikes_tileset.png" id="4_ebdcd"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="5_twclw"]
-[ext_resource type="Script" uid="uid://dclyjycivylgw" path="res://scripts/world_boundary.gd" id="6_f7id0"]
 [ext_resource type="FontFile" uid="uid://dqyhqvj0bpo4s" path="res://assets/PixeloidSans.ttf" id="7_nioyf"]
 [ext_resource type="PackedScene" uid="uid://dsqafxfxfdl1t" path="res://scenes/can.tscn" id="8_ebdcd"]
 [ext_resource type="PackedScene" uid="uid://tqb4ik5ftq24" path="res://scenes/bottle.tscn" id="9_twclw"]
@@ -141,8 +140,6 @@ texture = ExtResource("3_1xj5x")
 [sub_resource type="TileSet" id="TileSet_twclw"]
 sources/0 = SubResource("TileSetAtlasSource_ebdcd")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yf5fn"]
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
 distance = -108.0
 
@@ -168,13 +165,6 @@ tile_set = SubResource("TileSet_twclw")
 
 [node name="Player" parent="." unique_id=1991504208 instance=ExtResource("5_twclw")]
 position = Vector2(1112, -10)
-
-[node name="kill_boundary" type="Area2D" parent="." unique_id=1529053462]
-script = ExtResource("6_f7id0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kill_boundary" unique_id=1812527085]
-position = Vector2(794, 420)
-shape = SubResource("WorldBoundaryShape2D_yf5fn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=844717195]
 
@@ -208,9 +198,7 @@ text = "magic blanket follow: "
 position = Vector2(1695.0001, -291)
 
 [node name="bottle" parent="." unique_id=674027022 instance=ExtResource("9_twclw")]
-position = Vector2(1694.0001, -181.00002)
+position = Vector2(1694.0001, -183)
 
 [node name="cig" parent="." unique_id=159596559 instance=ExtResource("10_f7id0")]
 position = Vector2(1538.0001, -54)
-
-[connection signal="body_entered" from="kill_boundary" to="kill_boundary" method="_on_body_entered"]

@@ -29,6 +29,8 @@ var is_path_following = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music.play("opening_cs")
+	
 	player.set_physics_process(false)
 	fade_out_1.play("fade_out")
 	textbox.dialogue_finished.connect(_on_dialogue_finished)

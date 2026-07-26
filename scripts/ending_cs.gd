@@ -38,6 +38,8 @@ var is_path_following2 = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music.play("ending_cs")
+	
 	timer.start()
 	blanket_follow.hide()
 	player.set_physics_process(false)

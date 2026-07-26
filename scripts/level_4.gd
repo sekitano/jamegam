@@ -35,6 +35,7 @@ var is_path_following = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera.make_current()
+	Music.play("gameplay")
 	
 	
 func _process(delta):

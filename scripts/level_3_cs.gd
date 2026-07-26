@@ -27,6 +27,8 @@ var is_path_following = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music.play("gameplay")
+	
 	player.set_physics_process(false)
 	player.animated_sprite.play("idle")
 	camera.make_current()
