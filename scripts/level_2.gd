@@ -68,4 +68,4 @@ func _on_transition_to_lvl_3_body_entered(body: Node2D) -> void:
 	call_deferred("load_lvl3")
 
 func load_lvl3():
-	get_tree().change_scene_to_file('res://scenes/level3.tscn')
+	get_tree().change_scene_to_file('res://scenes/level3_cs.tscn')
