@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://blitrnypk7crl"]
+
+[ext_resource type="Texture2D" uid="uid://cbp3vdq5no1j7" path="res://assets/33333333.png" id="1_3alo4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxkqd"]
+atlas = ExtResource("1_3alo4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a50ll"]
+atlas = ExtResource("1_3alo4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxkqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a50ll")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1129186691]
+position = Vector2(16, -12)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+frame_progress = 0.5449221

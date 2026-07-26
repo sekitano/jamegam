@@ -20,6 +20,7 @@ extends Node2D
 
 @onready var animation_player: AnimationPlayer = $ColorRect/AnimationPlayer
 @onready var timer: Timer = $Timer
+@onready var timer_3: Timer = $Timer3
 
 
 
@@ -111,4 +112,11 @@ func _on_timer_2_timeout() -> void:
 	textbox.queue_text("Wizard: I've seen what you are capable of. The magic blanket is yours.")
 	
 func _on_dialogue_finished3():
-		print("dialogue finish")
+	print("dialogue finish")
+	fade_to_creds.play("fade_in")
+	timer_3.start()
+	
+
+
+func _on_timer_3_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/ending_cs.tscn")
