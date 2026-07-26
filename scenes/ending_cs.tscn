@@ -277,7 +277,6 @@ text = "magic blanket follow: "
 position = Vector2(-43, -14)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1272705294]
-visible = false
 z_index = 6
 offset_left = 4935.0
 offset_top = -523.0

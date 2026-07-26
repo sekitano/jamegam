@@ -106,10 +106,10 @@ func _on_timer_timeout() -> void:
 
 func _on_timer_2_timeout() -> void:
 	textbox.show()
-	textbox.queue_text("Wizard: We meet again!")
-	textbox.queue_text("Wizard: I see you've done a good job at cleaning up my sacred land.")
-	textbox.queue_text("Wizard: Thank you youngling. It mustn't have been easy clearing all of those obstacles.")
-	textbox.queue_text("Wizard: I've seen what you are capable of. The magic blanket is yours.")
+	textbox.queue_text("Meoward: We meet again!")
+	textbox.queue_text("Meoward: I see you've done a good job at cleaning up my sacred land.")
+	textbox.queue_text("Meoward: Thank you youngling. You must've faced a lot of challenges on the way.")
+	textbox.queue_text("Meoward: I've seen what you are capable of. The magic blanket is yours!")
 	
 func _on_dialogue_finished3():
 	print("dialogue finish")
@@ -119,4 +119,4 @@ func _on_dialogue_finished3():
 
 
 func _on_timer_3_timeout() -> void:
-	get_tree().change_scene_to_file("res://scenes/ending_cs.tscn")
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")

@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c7jukup4c8icd"]
 
+[ext_resource type="Script" uid="uid://bx2k7b7o7acop" path="res://scenes/credits.gd" id="1_0bpdh"]
+[ext_resource type="FontFile" uid="uid://dqyhqvj0bpo4s" path="res://assets/PixeloidSans.ttf" id="2_2ckv8"]
+
 [node name="Node2D" type="Node2D" unique_id=1587190335]
+script = ExtResource("1_0bpdh")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=537030914]
 offset_right = 1079.0
@@ -8,10 +12,11 @@ offset_bottom = 575.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=1769255448]
-offset_left = 192.0
-offset_top = 124.0
-offset_right = 256.0
-offset_bottom = 162.0
+offset_left = 401.0
+offset_top = 215.0
+offset_right = 697.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("2_2ckv8")
 text = "CREDITS:
 joxa - sound effects
 AD Sounds - Dialogue sound effect
@@ -21,3 +26,17 @@ me - everything else "
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1608314447]
 position = Vector2(540, 296)
 zoom = Vector2(1.265, 1.265)
+
+[node name="Timer" type="Timer" parent="." unique_id=2017971696]
+wait_time = 2.0
+one_shot = true
+
+[node name="Label2" type="Label" parent="." unique_id=107528015]
+offset_left = 408.0
+offset_top = 416.0
+offset_right = 595.0
+offset_bottom = 439.0
+theme_override_fonts/font = ExtResource("2_2ckv8")
+text = "thank you for playing! :3"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

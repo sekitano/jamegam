@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ddcwl34c1stlx" path="res://assets/BMTileset.png" id="4_ooj4e"]
 [ext_resource type="Texture2D" uid="uid://vgu6ib3ghlb4" path="res://assets/spikes_tileset.png" id="5_o6wdx"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="6_oesqq"]
-[ext_resource type="Script" uid="uid://cixar0djnyq70" path="res://scripts/level3_kill_bricks.gd" id="7_b5joq"]
 [ext_resource type="PackedScene" uid="uid://4eeunf2cghed" path="res://scenes/broken_bottle.tscn" id="8_ooj4e"]
 [ext_resource type="PackedScene" uid="uid://2wcnytxj8cpb" path="res://scenes/cig.tscn" id="9_o6wdx"]
 [ext_resource type="PackedScene" uid="uid://dsqafxfxfdl1t" path="res://scenes/can.tscn" id="10_oesqq"]
@@ -149,60 +148,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_128r5"]
-size = Vector2(15.125, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpfoh"]
-size = Vector2(47, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_saj5a"]
-size = Vector2(78.5, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i1yqa"]
-size = Vector2(78, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7dj"]
-size = Vector2(30, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0g4x"]
-size = Vector2(14.75, 1.625)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r8vu"]
-size = Vector2(62, 1.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g3bt"]
-size = Vector2(1, 151)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5tk7"]
-size = Vector2(86, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8htt"]
-size = Vector2(30.5, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hik2"]
-size = Vector2(254.5, 2.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gidxe"]
-size = Vector2(30, 1.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_760oa"]
-size = Vector2(2, 589)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxhb0"]
-size = Vector2(96.5, 1.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8her"]
-size = Vector2(2, 591)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i77u1"]
-size = Vector2(0.75, 799.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_810ok"]
-size = Vector2(97, 1.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmjie"]
-size = Vector2(2.5, 816)
-
 [node name="level3_cs" type="Node2D" unique_id=222708667]
 script = ExtResource("1_lhujc")
 
@@ -258,82 +203,6 @@ rotation = -0.44732255
 scale = Vector2(1.0000001, 1.0000001)
 zoom = Vector2(3.19, 3.19)
 
-[node name="kill_bricks" type="Area2D" parent="." unique_id=227237731]
-position = Vector2(1231, -60)
-script = ExtResource("7_b5joq")
-
-[node name="k1" type="CollisionShape2D" parent="kill_bricks" unique_id=1924757903]
-position = Vector2(1353.4375, -13)
-shape = SubResource("RectangleShape2D_128r5")
-
-[node name="k2" type="CollisionShape2D" parent="kill_bricks" unique_id=1828773014]
-position = Vector2(1385.5, 3)
-shape = SubResource("RectangleShape2D_mpfoh")
-
-[node name="k3" type="CollisionShape2D" parent="kill_bricks" unique_id=1827935147]
-position = Vector2(1449.75, 19)
-shape = SubResource("RectangleShape2D_saj5a")
-
-[node name="k4" type="CollisionShape2D" parent="kill_bricks" unique_id=1994206158]
-position = Vector2(1529, 34)
-shape = SubResource("RectangleShape2D_i1yqa")
-
-[node name="k5" type="CollisionShape2D" parent="kill_bricks" unique_id=13892212]
-position = Vector2(1585, 19)
-shape = SubResource("RectangleShape2D_yu7dj")
-
-[node name="k6" type="CollisionShape2D" parent="kill_bricks" unique_id=418065346]
-position = Vector2(1608.625, -12.1875)
-shape = SubResource("RectangleShape2D_u0g4x")
-
-[node name="k7" type="CollisionShape2D" parent="kill_bricks" unique_id=1816031389]
-position = Vector2(1729, -108.25)
-shape = SubResource("RectangleShape2D_7r8vu")
-
-[node name="k8" type="CollisionShape2D" parent="kill_bricks" unique_id=752553263]
-position = Vector2(1769, -23)
-shape = SubResource("RectangleShape2D_7g3bt")
-
-[node name="k9" type="CollisionShape2D" parent="kill_bricks" unique_id=1777058836]
-position = Vector2(1813, 52)
-shape = SubResource("RectangleShape2D_o5tk7")
-
-[node name="k10" type="CollisionShape2D" parent="kill_bricks" unique_id=1942375444]
-position = Vector2(1984.75, 52)
-shape = SubResource("RectangleShape2D_u8htt")
-
-[node name="k11" type="CollisionShape2D" parent="kill_bricks" unique_id=265464915]
-position = Vector2(2160.75, 51)
-shape = SubResource("RectangleShape2D_1hik2")
-
-[node name="k12" type="CollisionShape2D" parent="kill_bricks" unique_id=1199625387]
-position = Vector2(2305, -27.25)
-shape = SubResource("RectangleShape2D_gidxe")
-
-[node name="k13" type="CollisionShape2D" parent="kill_bricks" unique_id=979098738]
-position = Vector2(1545, -571.5)
-shape = SubResource("RectangleShape2D_760oa")
-
-[node name="k14" type="CollisionShape2D" parent="kill_bricks" unique_id=1647373296]
-position = Vector2(1600.75, -268.75)
-shape = SubResource("RectangleShape2D_gxhb0")
-
-[node name="k15" type="CollisionShape2D" parent="kill_bricks" unique_id=2123831385]
-position = Vector2(1657, -572.5)
-shape = SubResource("RectangleShape2D_d8her")
-
-[node name="k16" type="CollisionShape2D" parent="kill_bricks" unique_id=1489975940]
-position = Vector2(1833.375, -468.875)
-shape = SubResource("RectangleShape2D_i77u1")
-
-[node name="k17" type="CollisionShape2D" parent="kill_bricks" unique_id=649467446]
-position = Vector2(1889, -60.625)
-shape = SubResource("RectangleShape2D_810ok")
-
-[node name="k18" type="CollisionShape2D" parent="kill_bricks" unique_id=1543257954]
-position = Vector2(1945, -475)
-shape = SubResource("RectangleShape2D_vmjie")
-
 [node name="broken_bottle" parent="." unique_id=1007834893 instance=ExtResource("8_ooj4e")]
 position = Vector2(2869.0002, -99.00001)
 
@@ -342,5 +211,3 @@ position = Vector2(3152.0002, -38.000004)
 
 [node name="can" parent="." unique_id=1401199606 instance=ExtResource("10_oesqq")]
 position = Vector2(3431, -163.00002)
-
-[connection signal="body_entered" from="kill_bricks" to="kill_bricks" method="_on_body_entered"]

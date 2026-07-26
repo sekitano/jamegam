@@ -438,16 +438,16 @@ sprite_frames = SubResource("SpriteFrames_2obov")
 animation = &"button_down"
 
 [node name="can" parent="." unique_id=1401199606 instance=ExtResource("12_3nhj3")]
-position = Vector2(4242, -256)
+position = Vector2(4242, -260)
 
 [node name="broken_bottle" parent="." unique_id=1007834893 instance=ExtResource("13_akddp")]
-position = Vector2(4010, -352)
+position = Vector2(4010.0002, -355.00003)
 
 [node name="cig" parent="." unique_id=159596559 instance=ExtResource("14_xsyj0")]
-position = Vector2(4335, -416)
+position = Vector2(4335.0005, -422.00003)
 
 [node name="can2" parent="." unique_id=1941871339 instance=ExtResource("12_3nhj3")]
-position = Vector2(4662, 16)
+position = Vector2(4662.0005, 13)
 
 [node name="bottle" parent="." unique_id=674027022 instance=ExtResource("15_7stoi")]
-position = Vector2(4849, -96)
+position = Vector2(4849, -102)
