@@ -92,4 +92,4 @@ func _on_button_door_area_exited(area: Area2D) -> void:
 
 
 func _on_transition_to_end_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://scenes/level4_after_cs.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://scenes/level4_after_cs.tscn")

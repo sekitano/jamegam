@@ -9,10 +9,12 @@ extends Node2D
 #@onready var camera: Camera2D = $Path2D/PathFollow2D/Camera2D3
 #@onready var blanket_body = $magic_blanket/StaticBody2D
 @onready var camera_2d: Camera2D = $Path2D/PathFollow2D/Player/Camera2D
+@onready var timer2: Timer = $Timer2
 
 @onready var blanket_follow: Label = $Path2D/PathFollow2D/Player/Camera2D/blanket_follow
 @onready var path_follower2: PathFollow2D = $Path2D2/PathFollow2D
 @onready var camera2: Camera2D = $Path2D2/PathFollow2D/Camera2D
+@onready var textbox: CanvasLayer = $Path2D2/PathFollow2D/Camera2D/Textbox
 
 @onready var animation_player: AnimationPlayer = $ColorRect/AnimationPlayer
 @onready var timer: Timer = $Timer
@@ -71,6 +73,7 @@ func _physics_process(delta):
 		#tween.tween_property(camera, "zoom", default_zoom, zoom_in_speed_sec)
 		if path_follower2.progress_ratio >= 1:
 			is_path_following2 = false
+			timer2.start()
 			#get_tree().change_scene_to_file("res://scenes/level4.tscn")
 			#player_cam.make_current()
 	var direction = player.velocity.normalized()
@@ -91,3 +94,11 @@ func _physics_process(delta):
 func _on_timer_timeout() -> void:
 	animation_player.play("fade_out")
 	is_path_following = true
+
+
+func _on_timer_2_timeout() -> void:
+	textbox.show()
+	textbox.queue_text("Wizard: We meet again!")
+	textbox.queue_text("Wizard: I see you've done a good job at cleaning up my sacred land.")
+	textbox.queue_text("Wizard: Thank you youngling. It mustn't have been easy clearing all of those obstacles.")
+	textbox.queue_text("Wizard: I've seen what you are capable of. The magic blanket is yours.")
