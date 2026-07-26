@@ -29,7 +29,7 @@ var is_path_following = false
 func _ready() -> void:
 	player.set_physics_process(false)
 	player.animated_sprite.play("idle")
-	player_cam.make_current()
+	camera.make_current()
 	is_path_following = true
 	
 func _process(delta):
@@ -43,7 +43,7 @@ func _physics_process(delta):
 		tween.tween_property(camera, "zoom", zoomed_out, zoom_out_speed_sec)
 		
 		if path_follower.progress_ratio >= 1:
-			player.set_physics_process(true)
+			get_tree().change_scene_to_file("res://scenes/level3.tscn")
 			is_path_following = false
 		
 	var direction = player.velocity.normalized()

@@ -12,4 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("hi")
+	call_deferred("respawn")
+
+func respawn():
+	get_tree().reload_current_scene()

@@ -3,12 +3,8 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var magic_blanket: Node2D = $magic_blanket
 @onready var blanket_follow: Label = $blanket_follow
-@onready var path_2d: Path2D = $Path2D
-@onready var path_follower: PathFollow2D = $Path2D/PathFollow2D
 @onready var player_cam: Camera2D = $Player/Camera2D
-@onready var camera: Camera2D = $Path2D/PathFollow2D/Camera2D
-
-
+@onready var camera: Camera2D = $Camera2D2
 
 
 #@onready var blanket_follow: Label = $Player/Camera2D/blanket_follow
@@ -27,24 +23,13 @@ var is_path_following = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player.set_physics_process(false)
-	player.animated_sprite.play("idle")
 	camera.make_current()
-	is_path_following = true
 	
 func _process(delta):
 	pass
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if is_path_following:
-		path_follower.progress_ratio += 0.0051
-		var tween = get_tree().create_tween()
-		tween.tween_property(camera, "zoom", zoomed_out, zoom_out_speed_sec)
-		
-		if path_follower.progress_ratio >= 1:
-			player.set_physics_process(true)
-			is_path_following = false
 		
 	var direction = player.velocity.normalized()
 	
